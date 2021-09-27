@@ -8,7 +8,7 @@
   },
   "name": "@claire-em/moonsong",
   "description": "Cave Story music file player",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "source": "src/org-player.ts",
   "exports": "./dist/org-player.mydern.js",
