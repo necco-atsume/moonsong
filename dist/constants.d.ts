@@ -1,0 +1,11 @@
+export declare const DRUM_SAMPLE_RATE = 22050;
+export declare const CHANNEL_COUNT = 16;
+export declare const WAVETABLE_ENTRY_SIZE = 256;
+export declare const PI_NOTE_LENGTH_SAMPLES = 1024;
+export declare const PITCH_BEND_NORMALIZATION_FACTOR = 1000;
+export declare const CHANNEL_PRESCALE = 0.5;
+export declare const ENVELOPE_CUTOFF_SAMPLES = 50;
+export declare const DRUM_ENVELOPE_CUTOFF_SAMPLES = 15;
+export declare const FADE_IN_SAMPLES = 1000;
+export declare const PRE_SCALE_TRACK_VOLUME: number;
+export declare const USE_ENVELOPE = true;

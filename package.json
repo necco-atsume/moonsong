@@ -8,17 +8,14 @@
   },
   "name": "@claire-em/moonsong",
   "description": "Cave Story music file player",
-  "version": "1.0.0",
-
+  "version": "0.1.0",
   "private": false,
-
   "source": "src/org-player.ts",
   "exports": "./dist/org-player.mydern.js",
   "main": "./dist/org-player.cjs",
   "module": "./dist/org-player.module.js",
   "unpkg": "./dist/org-player.umd.js",
   "types": "dist/org-player.d.ts",
-
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
