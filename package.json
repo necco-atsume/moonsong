@@ -10,10 +10,10 @@
   "description": "Cave Story music file player",
   "version": "1.0.0",
 
-  "private": "false",
+  "private": false,
 
   "source": "src/org-player.ts",
-  "exports": "./dist/org-player.modern.js",
+  "exports": "./dist/org-player.mydern.js",
   "main": "./dist/org-player.cjs",
   "module": "./dist/org-player.module.js",
   "unpkg": "./dist/org-player.umd.js",
