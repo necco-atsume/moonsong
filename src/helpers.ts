@@ -11,16 +11,6 @@ export const clamp = (v: number): number => {
   }
 };
 
-/** Helper which takes a base64encoded string, and parses it to a byte buffer. */
-export const base64ToByteBuffer = (base64EncodedData: string) => {
-  const decoded = atob(base64EncodedData);
-  const buffer = new Uint8Array(decoded.length);
-  for (let i = 0; i < decoded.length; i++) {
-    buffer[i] = decoded.charCodeAt(i);
-  }
-  return buffer;
-};
-
 export const parseWavetable = (encodedWavetable: Uint8Array) => {
   const instruments = [];
   const stream = new BufferStream(encodedWavetable);

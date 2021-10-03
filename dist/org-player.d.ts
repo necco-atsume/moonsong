@@ -30,4 +30,4 @@ export declare class OrganyaPlayer {
        */
     getSample: (wavetableOrDrum: number[], offset: number) => number;
 }
-export {};
+export { WaveTable, loadWavetableAndDrums } from "./wavetable";

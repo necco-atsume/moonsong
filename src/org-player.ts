@@ -156,3 +156,5 @@ export class OrganyaPlayer {
     return v0 + t * (v1 - v0);
   };
 }
+
+export { WaveTable, loadWavetableAndDrums } from "./wavetable";
