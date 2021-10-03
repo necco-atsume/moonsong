@@ -2,10 +2,9 @@ import { CHANNEL_COUNT, PITCH_BEND_NORMALIZATION_FACTOR } from "./constants";
 import { beatToSample, parseDrum, parseWavetable } from "./helpers";
 import { BufferStream } from "./stream";
 import { Channel, OrganyaFile } from "./types";
-import { WAVE100, DRUMS } from "./wavetable";
+import { WaveTable } from "./wavetable";
 
 // Accurate volume and pan from http://rnhart.net/orgmaker, NXEngine-Evo
-
 const FrequenciesByNote = [262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494];
 const OctavePeriod = [32, 64, 64, 128, 128, 128, 128, 128];
 const WaveLengthsByOctave = [256, 256, 128, 128, 64, 32, 16, 8];
@@ -41,9 +40,9 @@ export class SongReader {
 
   private readonly useAlgorithmicPitch = true;
 
-  constructor(private readonly _sampleRate: number) {
-    this._wavetable = parseWavetable(WAVE100);
-    this._drums = DRUMS.map(parseDrum);
+  constructor(private readonly _sampleRate: number, waveData: WaveTable) {
+    this._wavetable = parseWavetable(waveData.WAVE100);
+    this._drums = waveData.DRUMS.map(parseDrum);
   }
 
   parseChannelData = (stream: BufferStream): Channel => {

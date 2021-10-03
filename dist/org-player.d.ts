@@ -1,8 +1,10 @@
+import { WaveTable } from "./wavetable";
 declare type OutputStep = [number, number];
 /**
- *
+ * .ORG file player.
  */
 export declare class OrganyaPlayer {
+    private readonly waveData;
     private readonly sampleRate;
     private readonly song;
     private readonly stepBuffer;
@@ -12,7 +14,7 @@ export declare class OrganyaPlayer {
     /**
      * Creates a new Organya file player with the given .org file data and sample rate.
      */
-    constructor(songData: Uint8Array, sampleRate: number);
+    constructor(songData: Uint8Array, waveData: WaveTable, sampleRate: number);
     /**
      * Generates the provided number of samples, outputting them into a left / right array.
      */

@@ -3,6 +3,7 @@ import { getAttackEnvelope, getFadeIn, getReleaseEnvelope } from "./envelope";
 import { clamp } from "./helpers";
 import { SongReader } from "./song-reader";
 import { OrganyaFile } from "./types";
+import { WaveTable } from "./wavetable";
 
 type OutputStep = [number, number];
 
@@ -13,7 +14,7 @@ type InstrumentState = {
 };
 
 /**
- *
+ * .ORG file player. 
  */
 export class OrganyaPlayer {
   private readonly song: OrganyaFile;
@@ -29,8 +30,8 @@ export class OrganyaPlayer {
   /**
    * Creates a new Organya file player with the given .org file data and sample rate.
    */
-  constructor(songData: Uint8Array, private readonly sampleRate: number) {
-    const songReader = new SongReader(sampleRate);
+  constructor(songData: Uint8Array, private readonly waveData: WaveTable, private readonly sampleRate: number) {
+    const songReader = new SongReader(sampleRate, waveData);
 
     // TODO: Actually, pass in a Song.
     this.song = songReader.parse(songData);

@@ -21,9 +21,9 @@ export const base64ToByteBuffer = (base64EncodedData: string) => {
   return buffer;
 };
 
-export const parseWavetable = (encodedWavetable: string) => {
+export const parseWavetable = (encodedWavetable: Uint8Array) => {
   const instruments = [];
-  const stream = new BufferStream(base64ToByteBuffer(encodedWavetable));
+  const stream = new BufferStream(encodedWavetable);
   for (let i = 0; i < 100; i++) {
     const wavetableInstrument = stream.nextWavetable();
     instruments.push(wavetableInstrument.map((sbyte) => (1.0 * sbyte) / 256.0)); // FIXME: Off-by-one here because this is +127/-128?
@@ -31,8 +31,8 @@ export const parseWavetable = (encodedWavetable: string) => {
   return instruments;
 };
 
-export const parseDrum = (encodedDrumSample: string) => {
-  const stream = new BufferStream(base64ToByteBuffer(encodedDrumSample));
+export const parseDrum = (encodedDrumSample: Uint8Array) => {
+  const stream = new BufferStream(encodedDrumSample);
   return stream.asDrumSample().map((short) => (1.0 * short) / 32767.0); // See above: Off by one? a
 };
 

@@ -11,7 +11,7 @@
   "version": "0.1.1",
   "private": false,
   "source": "src/org-player.ts",
-  "exports": "./dist/org-player.mydern.js",
+  "exports": "./dist/org-player.modern.js",
   "main": "./dist/org-player.cjs",
   "module": "./dist/org-player.module.js",
   "unpkg": "./dist/org-player.umd.js",
