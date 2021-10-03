@@ -10,7 +10,7 @@ export type WaveTable = {
 };
 
 /** Helper to, given a base url, pre-load the wave table and drums from a wave100.dat and 100-111.dat files. */
-const loadWavetableAndDrums = async (baseUrl: string): Promise<WaveTable> => {
+export const loadWavetableAndDrums = async (baseUrl: string): Promise<WaveTable> => {
   const separator = !baseUrl.endsWith('/') ? '/' : '';
   const path = (name: string) => baseUrl + separator + name;
 

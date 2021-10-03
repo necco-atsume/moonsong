@@ -141,8 +141,7 @@ export class OrganyaPlayer {
     channelBuffer[0] = left;
     channelBuffer[1] = right;
   };
-
-  /**
+/**
    * Reads a single sample from a wavetable or drum sound buffer.
    *
    * @param wavetableOrDrum The sound to read the sample from.

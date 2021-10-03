@@ -22,12 +22,12 @@ export declare class OrganyaPlayer {
     step: (stepBuffer: OutputStep) => void;
     stepChannel: (instrumentIndex: number, channelBuffer: OutputStep) => void;
     /**
-     * Reads a single sample from a wavetable or drum sound buffer.
-     *
-     * @param wavetableOrDrum The sound to read the sample from.
-     * @param offset The offset in samples of the sample to read.
-     * @returns Returns the sample value (linearly interpolated.)
-     */
+       * Reads a single sample from a wavetable or drum sound buffer.
+       *
+       * @param wavetableOrDrum The sound to read the sample from.
+       * @param offset The offset in samples of the sample to read.
+       * @returns Returns the sample value (linearly interpolated.)
+       */
     getSample: (wavetableOrDrum: number[], offset: number) => number;
 }
 export {};
