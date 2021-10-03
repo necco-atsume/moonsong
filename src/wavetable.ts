@@ -1,7 +1,7 @@
 const load = async (url: string): Promise<Uint8Array> => {
   const response = await fetch(url);
-  const contents = await response.body.getReader().read();
-  return contents.value!;
+  const contents = await response.body!.getReader().read();
+  return contents!.value!;
 };
 
 export type WaveTable = {
