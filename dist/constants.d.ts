@@ -9,3 +9,5 @@ export declare const DRUM_ENVELOPE_CUTOFF_SAMPLES = 15;
 export declare const FADE_IN_SAMPLES = 1000;
 export declare const PRE_SCALE_TRACK_VOLUME: number;
 export declare const USE_ENVELOPE = true;
+export declare const USE_QUADRATIC_ENVELOPE = true;
+export declare const DECAY_TO = 0.5;

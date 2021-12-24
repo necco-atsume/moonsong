@@ -193,6 +193,6 @@ export class SongReader {
         }
       }
     }
-    return { startSamples: songStart, endSamples: songEnd, channels: channelData, sampleRate: this._sampleRate, drums: this._drums, wavetable: this._wavetable };
+    return { startSamples: songStart, endSamples: songEnd, channels: channelData, sampleRate: this._sampleRate, drums: this._drums, wavetable: this._wavetable, samplesPerBeat: sampleTime(1) };
   };
 }

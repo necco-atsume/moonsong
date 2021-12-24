@@ -1,5 +1,5 @@
 import { PI_NOTE_LENGTH_SAMPLES, PRE_SCALE_TRACK_VOLUME as PRE_SCALE_CHANNEL_VOLUME } from "./constants";
-import { getAttackEnvelope, getFadeIn, getReleaseEnvelope } from "./envelope";
+import { getAttackEnvelope, getDecayEnvelope, getFadeIn, getReleaseEnvelope } from "./envelope";
 import { clamp } from "./helpers";
 import { SongReader } from "./song-reader";
 import { OrganyaFile } from "./types";
@@ -123,8 +123,11 @@ export class OrganyaPlayer {
         this.state[instrumentIndex].samplesPlayed++;
 
         // Apply a tiny envelope to the instruments, to prevent crackling.
+        const envelope_delay = this.song
         const envelope =
-          getAttackEnvelope(isDrum, this.state[instrumentIndex].samplesPlayed) * getReleaseEnvelope(isDrum, this.state[instrumentIndex].samplesPlayed, note.end - note.start);
+          getAttackEnvelope(isDrum, this.state[instrumentIndex].samplesPlayed) 
+          * getReleaseEnvelope(isDrum, this.state[instrumentIndex].samplesPlayed, note.end - note.start)
+          * (isDrum ? 1 : getDecayEnvelope(this.song.samplesPerBeat, this.state[instrumentIndex].samplesPlayed));
 
         left *= envelope;
         right *= envelope;

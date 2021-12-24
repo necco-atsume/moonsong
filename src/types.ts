@@ -5,6 +5,7 @@ export type OrganyaFile = {
   channels: Channel[];
   wavetable: number[][];
   drums: number[][];
+  samplesPerBeat: number;
 };
 
 export type Channel = {

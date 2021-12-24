@@ -21,3 +21,5 @@ export const FADE_IN_SAMPLES = 1000;
 export const PRE_SCALE_TRACK_VOLUME = 1 / 3;
 
 export const USE_ENVELOPE = true;
+
+export const DECAY_TO = .5;
